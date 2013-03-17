@@ -334,6 +334,18 @@ class Api:
       return wrapper
     return decorator
 
+  @__api_request(returns=[{u'VERSION': 'API version',
+                           u'METHODS': 'desc, params, and throws for API function'}])
+  def api_spec(self, request):
+    """Return information for all methods available in the API
+
+    - API version
+    - API methods
+      - method description
+      - method parameters
+      - method throws (errors)
+    """
+    pass
   @__api_request(optional=['LinodeID'],
                  returns=[{u'ALERT_BWIN_ENABLED': '0 or 1',
                            u'ALERT_BWIN_THRESHOLD': 'integer (Mb/sec?)',
